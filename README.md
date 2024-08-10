@@ -59,6 +59,10 @@ This project is released under the [MIT License](LICENSE).
 
 Please report bugs or request features through GitHub Issues. Pull requests are welcome.
 
+## Acknowledgements
+
+This project was inspired by and references the article [Ubuntu のホームディレクトリを外付け HDD に自動バックアップ](https://qiita.com/mr91i/items/07b827db0d10933557bf) on Qiita. We appreciate the insights and ideas shared in this article that contributed to the development of this automation project.
+
 ---
 
 For detailed usage instructions and configuration options, please refer to the comments within each script file.
