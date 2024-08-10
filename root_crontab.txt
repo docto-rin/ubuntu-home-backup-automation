@@ -10,31 +10,31 @@ PATH=/usr/local/sbin:/usr/bin:/bin:/usr/local/bin
 50 8 * * 1 /bin/bash /var/ubuntu-home-backup-automation/delete.sh 63 200 >>/var/backup_log/ct_log
 00 9 * * * /bin/bash /var/ubuntu-home-backup-automation/alert.sh
 
-# Sketch of Backup
+## Sketch of Backup
 # I will take backups with the following rule.
 # I delete backups frequently due to limitation of HDD capacity.
 # If there were large amount of the capacity, I couldn't care about it...
 #
 # Maximum number of backups (between making and deleting backups on Mon) : 15
-# B=Backup x=Delete_a_Backup *=Nothing
-# 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
-# Mon B * *       <-- Beginning of Backup
-# Tue B B * *      *
-# Wed B x B *      *
-# Thu B x * B * *     *
-# Fri B B * *B *     *
-# Sat B x B * *B *
-# Sun B B * B * *B *    *
-# Mon B x B * B * * B x x x x x x *
-# Tue B B * B * B * *B *   *
+# B=Backup x=Delete_a_Backup _=Nothing
+#      0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+# Mon  B _ _ _ _ _ _ _ _ _ _ _ _ _ _     <-- Begining of Backup
+# Tue  B B _ _ _ _ _ _ _ _ _ _ _ _ _
+# Wed  B x B _ _ _ _ _ _ _ _ _ _ _ _
+# Thu  B x _ B _ _ _ _ _ _ _ _ _ _ _
+# Fri  B B _ _ B _ _ _ _ _ _ _ _ _ _
+# Sat  B x B _ _ B _ _ _ _ _ _ _ _ _
+# Sun  B B _ B _ _ B _ _ _ _ _ _ _ _
+# Mon  B x B _ B _ _ B x x x x x x _
+# Tue  B B _ B _ B _ _ B _ _ _ _ _ _
 #
 # .................
 #
-# Mon B x B * B * * B x x x x x x B
-# Tue B B * B * B * * B * *
-# Wed B x B * B * B * * B * *  *
-# Thu B x * B * B * B * * B * *
-# Fri B B * * B * B * B * * B * * *
-# Sat B x B * *B * B * B * *B * *
-# Sun B B * B * * B * B * B * * B *
-# Mon B x B * B * * B x x x x x x B
+# Mon  B x B _ B _ _ B x x x x x x B
+# Tue  B B _ B _ B _ _ B _ _ _ _ _ _
+# Wed  B x B _ B _ B _ _ B _ _ _ _ _
+# Thu  B x _ B _ B _ B _ _ B _ _ _ _
+# Fri  B B _ _ B _ B _ B _ _ B _ _ _
+# Sat  B x B _ _ B _ B _ B _ _ B _ _
+# Sun  B B _ B _ _ B _ B _ B _ _ B _
+# Mon  B x B _ B _ _ B x x x x x x B
